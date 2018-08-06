@@ -16,3 +16,47 @@ The recommended way to install composer packages is:
 ```
 composer require mosaxiv/cakephp-mix
 ```
+
+## Usage
+
+### AppView Setup
+
+load Helper
+```php
+// src/View/AppView.php
+
+namespace App\View;
+
+use Cake\View\View;
+
+class AppView extends View
+{
+    public function initialize()
+    {
+        $this->loadHelper('CakeMix.Mix');
+    }
+}
+```
+
+### Helper Usage
+
+load script
+
+```php
+// /js/app.js
+$this->Mix->script('app');
+
+// <script src="/js/app.js"></script>
+$this->Mix->htmlScript('app');
+```
+
+load css
+
+```php
+// /js/app.css
+$this->Mix->script('app');
+
+// <script src="/js/app.css"></script>
+$this->Mix->htmlScript('app');
+
+```
