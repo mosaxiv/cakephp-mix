@@ -46,7 +46,7 @@ class MixHelper extends Helper
             return $this->Url->script($path, ['pathPrefix' => $hotUrl . Configure::read('App.jsBaseUrl')]);
         }
 
-        return $this->_mix($path);
+        return $this->_mix($path, 'script');
     }
 
     /**
@@ -62,15 +62,16 @@ class MixHelper extends Helper
             return $this->Url->css($path, ['pathPrefix' => $hotUrl . Configure::read('App.cssBaseUrl')]);
         }
 
-        return $this->_mix($path);
+        return $this->_mix($path, 'css');
     }
 
     /**
      * @param string $path path
+     * @param string $method url method
      * @return string
      * @throws \Exception
      */
-    protected function _mix(string $path)
+    protected function _mix(string $path, string $method)
     {
         static $manifests = [];
 
@@ -83,7 +84,7 @@ class MixHelper extends Helper
         }
 
         $manifest = $manifests[$manifestPath];
-        $path = $this->Url->script($path);
+        $path = $this->Url->{$method}($path);
         if (!isset($manifest[$path])) {
             throw new \Exception("Unable to locate Mix file: {$path}.");
         }
