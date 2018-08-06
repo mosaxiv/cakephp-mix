@@ -28,3 +28,6 @@ if (file_exists($root . '/config/bootstrap.php')) {
     return;
 }
 require $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
+
+define('TEST_DIR', dirname(__DIR__) . DS . 'tests' . DS);
+define('TEST_APP_DIR', TEST_DIR . 'test_app' . DS);

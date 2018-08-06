@@ -21,10 +21,31 @@ class MixHelperTest extends TestCase
         parent::setUp();
         Router::connect('/:controller/:action/*');
         $this->Mix = new MixHelper(new View());
+        $this->Mix->setConfig([
+            'hotPath' => TEST_APP_DIR . 'hot',
+            'manifestPath' => TEST_APP_DIR . 'mix-manifest.json'
+        ]);
     }
 
     public function tearDown()
     {
         parent::tearDown();
+    }
+
+    public function testScript()
+    {
+        $this->assertSame('/js/app.js?test', $this->Mix->script('app'));
+    }
+
+    public function testCss()
+    {
+        $this->assertSame('/css/app.css?test', $this->Mix->css('app'));
+    }
+
+    public function testHot()
+    {
+        $this->Mix->setConfig(['hotPath' => TEST_APP_DIR . 'hot1']);
+
+        $this->assertSame('http://localhost:8080/js/app.js', $this->Mix->script('app'));
     }
 }
