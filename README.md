@@ -1,5 +1,7 @@
 # Mix plugin for CakePHP3
 
+Helper to use [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with CakePHP3.
+
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## Requirements
@@ -59,4 +61,13 @@ $this->Mix->script('app');
 // <script src="/js/app.css"></script>
 $this->Mix->htmlScript('app');
 
+```
+
+## TIPS
+
+By using [create-laravel-mix](https://github.com/mosaxiv/create-laravel-mix) you can build environment fast.
+
+Exsample:
+```
+npx create-laravel-mix react --public-dir webroot
 ```

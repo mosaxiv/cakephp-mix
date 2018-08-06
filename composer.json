@@ -1,10 +1,12 @@
 {
   "name": "mosaxiv/cakephp-mix",
-  "description": "",
+  "description": "Helper to use laravel-mix with CakePHP3",
   "type": "cakephp-plugin",
   "keywords": [
       "cakephp",
-      "laravvel-mix"
+      "laravel-mix",
+      "vue",
+      "react"
   ],
   "homepage": "https://github.com/mosaxiv/cakephp-mix",
   "license": "MIT",
