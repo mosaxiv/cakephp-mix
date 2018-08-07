@@ -2,6 +2,8 @@
 
 Helper to use [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with CakePHP3.
 
+This is similar to the [mix()](https://readouble.com/laravel/5.5/en/helpers.html#method-mix) function of Laravel.
+
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## Requirements
