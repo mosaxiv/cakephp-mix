@@ -35,11 +35,13 @@ class MixHelperTest extends TestCase
     public function testScript()
     {
         $this->assertSame('/js/app.js?test', $this->Mix->script('app'));
+        $this->assertSame('/js/test.js', $this->Mix->script('test'));
     }
 
     public function testCss()
     {
         $this->assertSame('/css/app.css?test', $this->Mix->css('app'));
+        $this->assertSame('/css/test.css', $this->Mix->css('test'));
     }
 
     public function testHot()

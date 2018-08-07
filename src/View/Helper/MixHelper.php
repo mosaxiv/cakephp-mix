@@ -85,11 +85,8 @@ class MixHelper extends Helper
 
         $manifest = $manifests[$manifestPath];
         $path = $this->Url->{$method}($path);
-        if (!isset($manifest[$path])) {
-            throw new \Exception("Unable to locate Mix file: {$path}.");
-        }
 
-        return $manifest[$path];
+        return $manifest[$path] ?? $path;
     }
 
     /**
