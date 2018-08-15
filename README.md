@@ -57,11 +57,11 @@ $this->Mix->htmlScript('app');
 load css
 
 ```php
-// /js/app.css
-$this->Mix->script('app');
+// /css/app.css
+$this->Mix->css('app');
 
-// <script src="/js/app.css"></script>
-$this->Mix->htmlScript('app');
+// <script src="/css/app.css"></script>
+$this->Mix->htmlCss('app');
 
 ```
 
